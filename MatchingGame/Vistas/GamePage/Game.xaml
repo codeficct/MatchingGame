@@ -6,7 +6,26 @@
              xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage">
     <ContentPage.Content>
         <Grid BackgroundColor="#140429" RowDefinitions="148,*,92">
-            <StackLayout Orientation="Vertical" Padding="0,20" HorizontalOptions="Center" VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="Center" VerticalOptions="Start">
+                <Frame
+                    CornerRadius="24"
+                    BackgroundColor="#0e72bd"
+                    Padding="0,10"
+                    BorderColor="#0e72bd">
+                    <StackLayout Orientation="Vertical" WidthRequest="100" VerticalOptions="Center" Spacing="0">
+                        <Label 
+                            Text="10"
+                            FontSize="24"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            x:Name="Level" />
+                        <Label
+                            Text="Nivel"
+                            FontSize="16"
+                            HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
                 <ImageButton
                     WidthRequest="230"
                     BackgroundColor="#a95aad"
@@ -36,6 +55,8 @@
                         BackgroundColor="#a95aad"
                         BorderColor="#4d1e50"
                         BorderWidth="4"
+                        x:Name="OpenInfoModal"
+                        Clicked="OpenInfoModal_Clicked"
                     />
                     <Button 
                        Grid.Column="1"
