@@ -1,5 +1,6 @@
 ﻿using MatchingGame.Clases;
 using MatchingGame.Vistas.HomePage;
+using MatchingGame.Vistas.ModalPage;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,7 +19,7 @@ namespace MatchingGame.Vistas.GamePage
         int currentLevel = 0, rows = 3, columns = 2;
         int initialScore = 50, currentScore = 0;
         Matrix m1;
-        Grid grid = new Grid
+        Grid grid = new()
         {
             VerticalOptions = LayoutOptions.FillAndExpand,
             HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -40,12 +41,14 @@ namespace MatchingGame.Vistas.GamePage
             rows += currentLevel; columns += currentLevel;
             m1.SetLevel(currentLevel, currentScore);
             generateNextLevel(true);
+            Level.Text = (currentLevel + 1).ToString();
         }
 
         private async void btnClose_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Home());
         }
+
         private async void playGame_Clicked(object sender, EventArgs e)
         {
             bool isContinue = true;
@@ -73,6 +76,11 @@ namespace MatchingGame.Vistas.GamePage
             m1.HideCards(ref grid);
             m1.EnableButtons(ref grid);
             m1.SetMatchImage(ref MatchImageRandom);
+        }
+
+        private async void OpenInfoModal_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new InfoPage());
         }
 
         public void generateNextLevel(bool isDefault = false)
