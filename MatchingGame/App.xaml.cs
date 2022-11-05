@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MathingGame
+namespace MatchingGame
 {
     public partial class App : Application
     {

@@ -1,4 +1,4 @@
-<h1>Mathing Game - Feria 2-2022</h1>
+<h1>Matching Game - Feria 2-2022</h1>
 
 ✨ El juego de memoria visual de combinaciones. (Proyecto de investigación)
 

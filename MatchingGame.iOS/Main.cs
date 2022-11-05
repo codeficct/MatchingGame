@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace MathingGame.iOS
+namespace MatchingGame.iOS
 {
     public class Application
     {

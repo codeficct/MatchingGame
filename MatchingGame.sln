@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathingGame.Android", "MathingGame.Android\MathingGame.Android.csproj", "{D9CC067C-6ED3-4C5C-9C78-036F0C495A20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchingGame.Android", "MatchingGame.Android\MatchingGame.Android.csproj", "{D9CC067C-6ED3-4C5C-9C78-036F0C495A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathingGame.iOS", "MathingGame.iOS\MathingGame.iOS.csproj", "{8675D5CF-187C-4943-AFF7-93BFEB2F7B92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchingGame.iOS", "MatchingGame.iOS\MatchingGame.iOS.csproj", "{8675D5CF-187C-4943-AFF7-93BFEB2F7B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathingGame", "MathingGame\MathingGame.csproj", "{53F6F731-B2F9-4B8A-8E2E-5A930328D005}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchingGame", "MatchingGame\MatchingGame.csproj", "{53F6F731-B2F9-4B8A-8E2E-5A930328D005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
