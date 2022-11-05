@@ -9,7 +9,7 @@
 - 📦 Paradigma: Programación orientada a objetos
 - ⚡️ Facultad: [FICCT](https://www.uagrm.edu.bo/facultades/ficct)
 - 💅 Docente: Ing. Alberto Mollo M.
-- 🧑🏻‍💻 Desarrollador: [Luis Gabriel Janco](https://github.com/LuiSauter)
+- 🧑🏻‍💻 Desarrolladores: [Luis Gabriel Janco](https://github.com/LuiSauter), Ronald Rodriguez Bolivar
 
 ## Proyecto de investigación
 El emparejamiento es una habilidad esencial que nos ayuda a mejorar una serie de habilidades cognitivas como la memoria visual, la memoria a corto plazo y el reconocimiento de patrones que es un plus para un desarrollador de software.
