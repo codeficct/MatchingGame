@@ -1,6 +1,6 @@
 <h1>Matching Game - Feria 2-2022</h1>
 
-✨ El juego de memoria visual de combinaciones. (Proyecto de investigación)
+✨ El juego de memoria visual de combinaciones.
 
 - 🧑🏻‍💻 Materia/Area: Programación 1
 - 🚀 Lenguage: [C#](https://learn.microsoft.com/es-es/dotnet/csharp/)
@@ -11,4 +11,5 @@
 - 💅 Docente: Ing. Alberto Mollo M.
 - 🧑🏻‍💻 Desarrollador: [Luis Gabriel Janco](https://github.com/LuiSauter)
 
+## Proyecto de investigación
 El emparejamiento es una habilidad esencial que nos ayuda a mejorar una serie de habilidades cognitivas como la memoria visual, la memoria a corto plazo y el reconocimiento de patrones que es un plus para un desarrollador de software.
