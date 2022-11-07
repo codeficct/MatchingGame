@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatchingGame.Vistas.HomePage;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace MatchingGame
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Home();
         }
 
         protected override void OnStart()
