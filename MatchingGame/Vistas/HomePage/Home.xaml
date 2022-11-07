@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.HomePage.Home"
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage">
+    <Grid>
+        <CollectionView>
+            <CollectionView.Header>
+                <vistas:Header />
+            </CollectionView.Header>
+            
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="2" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <vistas:Body />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <vistas:Footer />
+    </Grid>
+</ContentPage>
