@@ -2,23 +2,81 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MatchingGame.Vistas.HomePage.Home"
-             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage">
-    <Grid>
-        <CollectionView>
-            <CollectionView.Header>
-                <vistas:Header />
-            </CollectionView.Header>
-            
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Span="2" Orientation="Vertical" />
-            </CollectionView.ItemsLayout>
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <vistas:Body />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <vistas:Footer />
-    </Grid>
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Background="#140429" Orientation="Vertical">
+        <!-- Header start-->
+        <Frame BackgroundColor="Transparent" Padding="0,10">
+            <Grid RowDefinitions="*" ColumnDefinitions="*,*">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10" Padding="10,0" >
+                    <Frame Padding="10,4,8,6" BackgroundColor="#f1a41f" CornerRadius="14">
+                        <Label Text="Puntos: " TextColor="#FFF" FontSize="14" />
+                    </Frame>
+                    <Label Text="0" TextColor="#FFF" FontSize="16" Padding="0,4,0,0" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" HorizontalOptions="End">
+                    <Frame
+                        CornerRadius="14"
+                        TranslationX="10"
+                        BackgroundColor="#6a1c3c"
+                        Padding="14,4,22,6"
+                    >
+                        <Label
+                            Text="Feria 2-2022"
+                            TextColor="#FFF"
+                            BackgroundColor="Transparent"
+                            FontSize="14"
+                        />
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <!-- Header end-->
+
+        <!-- Hero start-->
+        <Frame BackgroundColor="Transparent" Padding="0,70" HorizontalOptions="Center">
+            <StackLayout>
+                <Image Source="matchingGame" Aspect="AspectFill" Scale="1.2" />
+            </StackLayout>
+        </Frame>
+        <!-- Hero end-->
+
+        <!-- Button actions start-->
+        <Frame Padding="0" BackgroundColor="Transparent">
+            <Grid ColumnDefinitions="*,*">
+                <StackLayout>
+                    <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="60" TranslationY="30" Scale="1.8" />
+                    <Image Source="brainlogo" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20">
+                    <Button Text="JUGAR" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#41f0d1" Offset="0.1" />
+                                <GradientStop Color="#0e72bd" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="INFO" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#a95aad" Offset="0.1" />
+                                <GradientStop Color="#762f7d" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Text="CREDITOS" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#edc50e" Offset="0.1" />
+                                <GradientStop Color="#f1a31d" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <!-- Button actions end-->
+    </StackLayout>
 </ContentPage>
