@@ -17,6 +17,8 @@ El emparejamiento es una habilidad esencial que nos ayuda a mejorar una serie de
 ## Estado del proyecto
 
 - [x] Primera fase.
+- [x] Segunda fase.
+- [x] Tercera fase.
 
  <table>
     <tbody>
@@ -52,6 +54,3 @@ El emparejamiento es una habilidad esencial que nos ayuda a mejorar una serie de
       </tr>
     </tbody>
   </table>
-
-- [ ] Segunda fase.
-- [ ] Tercera fase.
