@@ -1,7 +1,7 @@
 <h1 align="center">Matching Game - Feria 2-2022</h1>
 
 <div align="center">
- <img width="20%" style="display: flex" src="https://user-images.githubusercontent.com/88288135/211443406-f5b3cdd7-75ec-4c08-b07d-4cf5a4ec231a.jpeg" />
+ <img width="20%" src="https://user-images.githubusercontent.com/88288135/211443406-f5b3cdd7-75ec-4c08-b07d-4cf5a4ec231a.jpeg" />
  <img width="20%" src="https://user-images.githubusercontent.com/88288135/211443409-a692d590-27cc-492d-879a-387a77484011.jpeg" />
 </div>
 
