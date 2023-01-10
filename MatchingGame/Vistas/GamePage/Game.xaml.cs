@@ -1,5 +1,4 @@
-﻿using MatchingGame.Vistas.GamePage;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MatchingGame.Vistas.HomePage
+namespace MatchingGame.Vistas.GamePage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Home : ContentPage
+    public partial class Game : ContentPage
     {
-        public Home()
+        public Game()
         {
             InitializeComponent();
         }
 
-        private async void navigateToGame_Clicked(object sender, EventArgs e)
+        private async void btnClose_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Game());
+            await Navigation.PopAsync();
         }
     }
 }

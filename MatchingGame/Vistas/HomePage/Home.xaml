@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="MatchingGame.Vistas.HomePage.Home"
              xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage"
              NavigationPage.HasNavigationBar="False">
@@ -8,19 +9,17 @@
         <!-- Header start-->
         <Frame BackgroundColor="Transparent" Padding="0,10">
             <Grid RowDefinitions="*" ColumnDefinitions="*,*">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10" Padding="10,0" >
-                    <Frame Padding="10,4,8,6" BackgroundColor="#f1a41f" CornerRadius="14">
-                        <Label Text="Puntos: " TextColor="#FFF" FontSize="14" />
+                <StackLayout Grid.Column="0" HorizontalOptions="Start">
+                    <Frame Padding="42,4,14,4" TranslationX="-30" BackgroundColor="#f1a41f" CornerRadius="14">
+                        <Label Text="Puntos: 000" TextColor="#FFF" FontSize="14" />
                     </Frame>
-                    <Label Text="0" TextColor="#FFF" FontSize="16" Padding="0,4,0,0" />
                 </StackLayout>
-
                 <StackLayout Grid.Column="1" HorizontalOptions="End">
                     <Frame
                         CornerRadius="14"
                         TranslationX="10"
                         BackgroundColor="#6a1c3c"
-                        Padding="14,4,22,6"
+                        Padding="14,4,22,4"
                     >
                         <Label
                             Text="Feria 2-2022"
@@ -46,11 +45,24 @@
         <Frame Padding="0" BackgroundColor="Transparent">
             <Grid ColumnDefinitions="*,*">
                 <StackLayout>
-                    <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="60" TranslationY="30" Scale="1.8" />
-                    <Image Source="brainlogo" />
+                    <Image Source="braindstorming" Aspect="AspectFit" HeightRequest="150" RotationY="180" TranslationY="-80" TranslationX="60" Rotation="-5" Scale="1.3" />
+                    <Image Source="brain" Aspect="AspectFit" HeightRequest="110" Rotation="-10" TranslationY="-90" TranslationX="-30" Scale="1.2" />
+                    <Image Source="question" Aspect="AspectFit" HeightRequest="100" TranslationY="-160" TranslationX="60" Rotation="10" Scale="1.3" />
+                    <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="100" TranslationY="-190" Scale="0.7" />
                 </StackLayout>
-                <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20">
-                    <Button Text="JUGAR" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20" >
+                    <Button
+                        Text="JUGAR"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#fff"
+                        CornerRadius="24"
+                        BorderColor="#104367"
+                        BorderWidth="4"
+                        x:Name="navigateToGame"
+                        Clicked="navigateToGame_Clicked"
+                        HeightRequest="54"
+                    >
                         <Button.Background>
                             <LinearGradientBrush>
                                 <GradientStop Color="#41f0d1" Offset="0.1" />
@@ -58,7 +70,15 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button Text="INFO" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                    <Button
+                        Text="INFO"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#fff"
+                        CornerRadius="24"
+                        BorderColor="#411645"
+                        BorderWidth="4"
+                        HeightRequest="54">
                         <Button.Background>
                             <LinearGradientBrush>
                                 <GradientStop Color="#a95aad" Offset="0.1" />
@@ -66,7 +86,15 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button Text="CREDITOS" FontSize="22" FontAttributes="Bold" TextColor="#fff" CornerRadius="16">
+                    <Button 
+                        Text="CREDITOS" 
+                        FontSize="22" 
+                        FontAttributes="Bold" 
+                        TextColor="#fff" 
+                        CornerRadius="24"
+                        BorderColor="#745826"
+                        BorderWidth="4"
+                        HeightRequest="54">
                         <Button.Background>
                             <LinearGradientBrush>
                                 <GradientStop Color="#edc50e" Offset="0.1" />
