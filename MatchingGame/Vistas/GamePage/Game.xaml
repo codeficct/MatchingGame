@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.GamePage.Game"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#140429" RowDefinitions="148,*,92">
+            <StackLayout Orientation="Vertical" Padding="0,20" HorizontalOptions="Center" VerticalOptions="Start">
+                <Frame
+                    BackgroundColor="Aquamarine"
+                    CornerRadius="8"
+                    Padding="20,14"
+                    WidthRequest="150"
+                    HeightRequest="80"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HasShadow="True"
+                >
+                    <Image Source="_1" Aspect="AspectFit" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,0">
+                <vistas:Cards />
+            </StackLayout>
+
+            <Frame Grid.Row="2" BackgroundColor="Transparent">
+                <Grid ColumnDefinitions="90,*,90">
+                    <Button
+                        Text="Info"
+                        CornerRadius="24"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a95aad"
+                        BorderColor="#4d1e50"
+                        BorderWidth="4"
+                    />
+                    <Button 
+                       Grid.Column="1"
+                        Text="Jugar"
+                        CornerRadius="24"
+                        Margin="10,0"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        BorderColor="#0e72bd"
+                        BorderWidth="4"
+                    >
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#41f0d1" Offset="0.0" />
+                                <GradientStop Color="#0e72bd" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button
+                        Grid.Column="2"
+                        Text="Salir"
+                        CornerRadius="24"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a95aad"
+                        BorderColor="#4d1e50"
+                        BorderWidth="4"
+                        x:Name="btnClose"
+                        Clicked="btnClose_Clicked"
+                    />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+
+<!--
+    <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="_1" Aspect="AspectFit" BackgroundColor="Aquamarine" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                    <ImageButton Grid.Row="0" Grid.Column="1" Source="_2"  Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                    <ImageButton Grid.Row="1" Grid.Column="0" Source="_3" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                    <ImageButton Grid.Row="1" Grid.Column="1" Source="_4" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                    <ImageButton Grid.Row="2" Grid.Column="0" Source="_5" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                    <ImageButton Grid.Row="2" Grid.Column="1" Source="_25" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
+                </Grid>
+    -->
