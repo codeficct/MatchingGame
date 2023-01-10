@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatchingGame.Vistas.GamePage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace MatchingGame.Vistas.HomePage
         public Home()
         {
             InitializeComponent();
+        }
+
+        private async void navigateToGame_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Game());
         }
     }
 }
