@@ -3,26 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MatchingGame.Vistas.GamePage.Game"
              NavigationPage.HasNavigationBar="False"
-             xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage">
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage" xmlns:local="clr-namespace:MatchingGame.Clases">
+    <ContentPage.BindingContext>
+        <local:GameSetting />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid BackgroundColor="#140429" RowDefinitions="148,*,92">
             <StackLayout Orientation="Vertical" Padding="0,20" HorizontalOptions="Center" VerticalOptions="Start">
-                <Frame
-                    BackgroundColor="Aquamarine"
+                <!-- <Frame
+                    BackgroundColor="#a95aad"
                     CornerRadius="8"
                     Padding="20,14"
                     WidthRequest="150"
                     HeightRequest="80"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    HasShadow="True"
+                    BorderColor="#4d1e50"
                 >
-                    <Image Source="_1" Aspect="AspectFit" />
-                </Frame>
+                    <Image  Source="defaultcard" x:Name="MatchImageRandom" Aspect="AspectFit" />
+                </Frame> -->
+                <ImageButton
+                    WidthRequest="230"
+                    BackgroundColor="#a95aad"
+                    HeightRequest="120"
+                    Padding="0,10"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    CornerRadius="24"
+                    BorderWidth="4"
+                    BorderColor="#4d1e50"
+                    Source="defaultcard"
+                    x:Name="MatchImageRandom"
+                    Aspect="AspectFit" />
             </StackLayout>
 
             <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10,0">
-                <vistas:Cards />
+                <vistas:Cards x:Name="CardContainer"  />
             </StackLayout>
 
             <Frame Grid.Row="2" BackgroundColor="Transparent">
@@ -45,6 +61,8 @@
                         FontAttributes="Bold"
                         BorderColor="#0e72bd"
                         BorderWidth="4"
+                        x:Name="playGame"
+                        Clicked="playGame_Clicked"
                     >
                         <Button.Background>
                             <LinearGradientBrush>
