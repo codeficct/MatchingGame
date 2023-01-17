@@ -20,7 +20,7 @@ namespace MatchingGame.Vistas.HomePage
 
         private async void navigateToGame_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Game());
+            await Navigation.PushAsync(new Game(0));
         }
     }
 }
