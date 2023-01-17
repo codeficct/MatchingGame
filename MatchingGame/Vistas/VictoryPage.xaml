@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.VictoryPage"
+              NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#140429" VerticalOptions="FillAndExpand">
+            <StackLayout>
+
+                <Label Text="Bien Hecho! ✨"
+                   FontSize="34"
+                   TextColor="White"
+                       Margin="0,250,0,0"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Image
+                Source="checked"
+                Aspect="AspectFit"
+                HeightRequest="200"
+                Margin="0,30"
+                />
+                <StackLayout Orientation="Horizontal" Margin="20,230,40,0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Button
+                        Grid.Column="2"
+                        Text="Salir"
+                        CornerRadius="24"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a95aad"
+                        BorderColor="#4d1e50"
+                        BorderWidth="4"
+                        Padding="40,0"
+                        x:Name="CloseBtn"
+                        Clicked="CloseBtn_Clicked"
+                    />
+                    <Button
+                Text="Siguiente Nivel"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="#fff"
+                CornerRadius="24"
+                BorderColor="#104367"
+                        Padding="30,0"
+                BorderWidth="4"
+                x:Name="NextLevel"
+                Clicked="NextLevel_Clicked"
+                HeightRequest="54"
+            >
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#41f0d1" Offset="0.1" />
+                                <GradientStop Color="#0e72bd" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
