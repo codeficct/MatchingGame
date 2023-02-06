@@ -10,7 +10,6 @@ namespace MatchingGame
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new Home());
         }
 
