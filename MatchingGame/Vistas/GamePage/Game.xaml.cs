@@ -16,31 +16,27 @@ namespace MatchingGame.Vistas.GamePage
     public partial class Game : ContentPage
     {
         int currentLevel = 0, rows = 3, columns = 2;
-        public GameSetting Setting { get; set; }
+        int initialScore = 50, currentScore = 0;
         Matrix m1;
         Grid grid = new Grid
         {
             VerticalOptions = LayoutOptions.FillAndExpand,
             HorizontalOptions = LayoutOptions.FillAndExpand,
         };
-        public Game(int level)
+        public Game(int level, int Score)
         {
             currentLevel = level;
-            Setting = new GameSetting
-            {
-                Level = currentLevel
-            };
-            BindingContext = Setting;
+
+            currentScore = Score + initialScore + (level * 17);
+
             m1 = new Matrix();
 
             InitializeComponent();
             CardContainer.Content = grid;
             playGame.IsEnabled = true;
             playGame.Opacity = 1;
-            Setting.Level = currentLevel;
-            BindingContext = Setting;
             rows += currentLevel; columns += currentLevel;
-            m1.SetLevel(currentLevel);
+            m1.SetLevel(currentLevel, currentScore);
             generateNextLevel(true);
         }
 
@@ -73,14 +69,6 @@ namespace MatchingGame.Vistas.GamePage
             await Task.Delay(7000 + 7000 * (currentLevel / 5));
             m1.HideCards(ref grid);
             m1.SetMatchImage(ref MatchImageRandom);
-            //if (isPlaying)
-            //{
-            //    Setting.Level = currentLevel;
-            //    BindingContext = Setting;
-            //    rows += currentLevel; columns += currentLevel;
-            //    generateNextLevel();
-            //}
-            //isPlaying = true;
         }
 
         public void generateNextLevel(bool isDefault = false)
@@ -104,7 +92,6 @@ namespace MatchingGame.Vistas.GamePage
             {
                 CardContainer.Content = grid;
             }
-            // App.Current.MainPage.DisplayAlert("Message Context", Setting.GetLevel.ToString(), "cancel");
         }
 
         public void StarGame()

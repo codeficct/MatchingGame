@@ -3,25 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MatchingGame.Vistas.GamePage.Game"
              NavigationPage.HasNavigationBar="False"
-             xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage" xmlns:local="clr-namespace:MatchingGame.Clases">
-    <ContentPage.BindingContext>
-        <local:GameSetting />
-    </ContentPage.BindingContext>
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage">
     <ContentPage.Content>
         <Grid BackgroundColor="#140429" RowDefinitions="148,*,92">
             <StackLayout Orientation="Vertical" Padding="0,20" HorizontalOptions="Center" VerticalOptions="Start">
-                <!-- <Frame
-                    BackgroundColor="#a95aad"
-                    CornerRadius="8"
-                    Padding="20,14"
-                    WidthRequest="150"
-                    HeightRequest="80"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    BorderColor="#4d1e50"
-                >
-                    <Image  Source="defaultcard" x:Name="MatchImageRandom" Aspect="AspectFit" />
-                </Frame> -->
                 <ImageButton
                     WidthRequest="230"
                     BackgroundColor="#a95aad"
@@ -88,15 +73,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
-
-<!--
-    <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    
-                    <ImageButton Grid.Row="0" Grid.Column="0" Source="_1" Aspect="AspectFit" BackgroundColor="Aquamarine" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                    <ImageButton Grid.Row="0" Grid.Column="1" Source="_2"  Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                    <ImageButton Grid.Row="1" Grid.Column="0" Source="_3" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                    <ImageButton Grid.Row="1" Grid.Column="1" Source="_4" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                    <ImageButton Grid.Row="2" Grid.Column="0" Source="_5" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                    <ImageButton Grid.Row="2" Grid.Column="1" Source="_25" Aspect="AspectFit" BackgroundColor="#7b5b9c" Opacity="0.5" BorderWidth="2" BorderColor="#aaa" CornerRadius="16" />
-                </Grid>
-    -->
+    
