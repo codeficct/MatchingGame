@@ -1,4 +1,5 @@
-﻿using MatchingGame.Vistas.GamePage;
+﻿using MatchingGame.Clases;
+using MatchingGame.Vistas.GamePage;
 using MatchingGame.Vistas.HomePage;
 using System;
 using System.Collections.Generic;
@@ -14,16 +15,19 @@ namespace MatchingGame.Vistas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VictoryPage : ContentPage
     {
-        int currentLevel;
-        public VictoryPage(int level)
+        int currentLevel, currentScore;
+        public VictoryPage(int level, int Score)
         {
             currentLevel = level;
             InitializeComponent();
+            PointsEarned.Text = Score.ToString();
+            currentScore = Score;
+            CurrentScore.Text = (Score + Score).ToString();
         }
 
         private async void NextLevel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Game(currentLevel));
+            await Navigation.PushAsync(new Game(currentLevel, currentScore));
         }
 
         private async void CloseBtn_Clicked(object sender, EventArgs e)
