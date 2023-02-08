@@ -1,5 +1,6 @@
 ﻿using MatchingGame.Clases;
 using MatchingGame.Vistas.GamePage;
+using MatchingGame.Vistas.LoginPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace MatchingGame.Vistas.HomePage
         private async void navigateToGame_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Game(0, Score));
+        }
+
+        private async void Register_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
         }
     }
 }
