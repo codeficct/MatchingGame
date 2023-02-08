@@ -14,9 +14,11 @@ namespace MatchingGame.Clases
     public class Matrix
     {
         private int rows, columns;
+        private string[,] m;
+        private bool isWin;
         public string match;
         public int Level;
-        private string[,] m;
+        public int Score;
 
         public Matrix()
         {
@@ -28,11 +30,12 @@ namespace MatchingGame.Clases
             rows = r; columns = c;
             m = new string[r, c];
             match = "defaultcard";
+            isWin = false;
         }
 
-        public void SetLevel(int level)
+        public void SetLevel(int level, int score)
         {
-            Level = level;
+            Level = level; Score = score;
         }
 
         public void SetMatchImage(ref ImageButton MatchImageRandom)
@@ -60,7 +63,6 @@ namespace MatchingGame.Clases
             for (int r = 0; r < rows; r++)
                 for (int c = 0; c < columns; c++)
                 {
-                    // BoxView boxview = new BoxView { BackgroundColor = Color.FromHex("#7b5b9c"), CornerRadius = 16, HeightRequest =  };
                     ImageButton imageButton = new ImageButton { Source = "question", Padding = new Thickness(0, 30), Aspect = Aspect.AspectFit, BackgroundColor = Color.FromHex("#7b5b9c"), BorderWidth = 2, BorderColor = Color.FromHex("#aaa"), CornerRadius = 16 };
 
                     grid.Children.Add(imageButton, c, r);
@@ -76,8 +78,15 @@ namespace MatchingGame.Clases
                     gridContent.Children.Add(imageButton, c, r);
                     imageButton.Clicked += async (sender, args) =>
                     {
-                        // ((ImageButton)sender).Source = ((ImageButton)sender).ClassId;
                         imageButton.Source = ((ImageButton)sender).ClassId;
+                        if (imageButton.ClassId != match && !isWin)
+                        {
+                            if (Score < 0)
+                            {
+                                await App.Current.MainPage.Navigation.PushAsync(new GameOverPage(Score));
+                            }
+                            Score = Score - (Level * 5) - 10;
+                        }
                         this.IsMatch(imageButton.ClassId);
                         await Task.Delay(1000);
                         ((ImageButton)sender).Source = "question";
@@ -89,9 +98,9 @@ namespace MatchingGame.Clases
         {
             if (id == match)
             {
+                isWin = true;
                 await Task.Delay(500);
-                // await App.Current.MainPage.DisplayAlert("Is Matching!", id, "Ok");
-                await App.Current.MainPage.Navigation.PushAsync(new VictoryPage(Level + 1));
+                await App.Current.MainPage.Navigation.PushAsync(new VictoryPage(Level + 1, Score));
             }
         }
 

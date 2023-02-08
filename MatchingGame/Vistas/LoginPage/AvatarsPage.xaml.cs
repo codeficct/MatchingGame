@@ -1,5 +1,4 @@
-﻿using MatchingGame.Clases;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +6,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-namespace MatchingGame.Vistas.GamePage
+
+namespace MatchingGame.Vistas.LoginPage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Cards : ContentView
+    public partial class AvatarsPage : ContentPage
     {
-        
-        public Cards()
+        public AvatarsPage()
         {
             InitializeComponent();
         }

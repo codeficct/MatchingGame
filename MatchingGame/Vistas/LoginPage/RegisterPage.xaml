@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.LoginPage.RegisterPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#140429">
+            <StackLayout VerticalOptions="CenterAndExpand" MinimumHeightRequest="900">
+                <ImageButton
+                    Source="addProfile"
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Aspect="AspectFit"
+                    x:Name="SelectAvatars"
+                    Clicked="SelectAvatars_Clicked"
+                    HorizontalOptions="Center"
+                    CornerRadius="900"
+                    BackgroundColor="#140429"/>
+                <StackLayout
+                    Orientation="Vertical"
+                    VerticalOptions="Fill"
+                    Spacing="16"
+                    Margin="42,62">
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                Keyboard="Text"
+                                Margin="0"
+                                Placeholder="Introduzca su nombre"
+                                IsTextPredictionEnabled="True"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                Keyboard="Email"
+                                Placeholder="example@example.com"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                IsPassword="True"
+                                Placeholder="Contraseña"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0"
+                        >
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                IsPassword="True"
+                                Placeholder="Contraseña de nuevo"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Button
+                    Text="Registrar"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    CornerRadius="24"
+                    Margin="70,0"
+                    HeightRequest="54"
+                    BackgroundColor="#fe207d"
+                    BorderColor="#411645"
+                    BorderWidth="4"/>
+                <Label Text="Iniciar Sesión" HorizontalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -9,22 +9,22 @@ namespace MatchingGame.Clases
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private static int level = 0;
+        private static int score = 0;
 
-        public int Level
+        public int Score
         {
-            get => level;
+            get => score;
             set
             {
-                if (level == value)
+                if (score == value)
                     return;
-                level = value;
-                onPropertyChanged(nameof(Level));
-                onPropertyChanged(nameof(GetLevel));
+                score = value;
+                onPropertyChanged(nameof(Score));
+                onPropertyChanged(nameof(GetScore));
             }
         }
 
-        public int GetLevel => level;
+        public int GetScore => score;
 
         void onPropertyChanged(string name)
         {

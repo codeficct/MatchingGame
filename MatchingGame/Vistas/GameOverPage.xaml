@@ -1,23 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MatchingGame.Clases"
-             x:Class="MatchingGame.Vistas.VictoryPage"
-              NavigationPage.HasNavigationBar="False">
-    <ContentPage.BindingContext>
-        <local:GameSetting />
-    </ContentPage.BindingContext>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.GameOverPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#140429" VerticalOptions="FillAndExpand">
             <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*" VerticalOptions="EndAndExpand">
                 <Label
                     Grid.Row="0"
-                    Text="Bien Hecho! ✨"
+                    Text="Has Perdido..."
                     FontSize="34"
                     TextColor="White"
                     VerticalOptions="CenterAndExpand"
                     HorizontalOptions="CenterAndExpand" />
                 <Image
-                    Source="checked"
+                    Source="cancel"
                     Aspect="AspectFit"
                     HeightRequest="200"
                     Grid.Row="1"
@@ -32,6 +29,7 @@
                         <Label Text="+"
                             FontSize="34"
                             TextColor="#03C988"
+                            x:Name="Symbol"
                         />
                         <Label Text="000"
                             FontSize="34"
@@ -70,30 +68,10 @@
                         BorderColor="#4d1e50"
                         BorderWidth="4"
                         Padding="30,0"
-                        x:Name="CloseBtn"
+                        x:Name="CloseOverBtn"
                         HeightRequest="54"
-                        Clicked="CloseBtn_Clicked"
+                        Clicked="CloseOverBtn_Clicked"
                     />
-                    <Button
-                        Text="Siguiente Nivel"
-                        FontSize="22"
-                        FontAttributes="Bold"
-                        TextColor="#fff"
-                        CornerRadius="24"
-                        BorderColor="#104367"
-                        Padding="30,0"
-                        BorderWidth="4"
-                        x:Name="NextLevel"
-                        Clicked="NextLevel_Clicked"
-                        HeightRequest="54"
-                    >
-                        <Button.Background>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#41f0d1" Offset="0.1" />
-                                <GradientStop Color="#0e72bd" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
                 </StackLayout>
             </Grid>
         </StackLayout>

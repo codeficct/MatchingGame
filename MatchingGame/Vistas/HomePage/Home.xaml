@@ -3,15 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="MatchingGame.Vistas.HomePage.Home"
-             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage"
+             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage" xmlns:local="clr-namespace:MatchingGame.Clases"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <local:GameSetting />
+    </ContentPage.BindingContext>
     <StackLayout Background="#140429" Orientation="Vertical">
         <!-- Header start-->
         <Frame BackgroundColor="Transparent" Padding="0,10">
             <Grid RowDefinitions="*" ColumnDefinitions="*,*">
                 <StackLayout Grid.Column="0" HorizontalOptions="Start">
                     <Frame Padding="42,4,14,4" TranslationX="-30" BackgroundColor="#f1a41f" CornerRadius="14">
-                        <Label Text="Puntos: 000" TextColor="#FFF" FontSize="14" />
+                        <Label Text="{Binding GetScore}" TextColor="#FFF" FontSize="14" x:Name="lblScore" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Column="1" HorizontalOptions="End">
@@ -45,9 +48,9 @@
         <Frame Padding="0" BackgroundColor="Transparent">
             <Grid ColumnDefinitions="*,*">
                 <StackLayout>
-                    <Image Source="braindstorming" Aspect="AspectFit" HeightRequest="150" RotationY="180" TranslationY="-80" TranslationX="60" Rotation="-5" Scale="1.3" />
-                    <Image Source="brain" Aspect="AspectFit" HeightRequest="110" Rotation="-10" TranslationY="-90" TranslationX="-30" Scale="1.2" />
-                    <Image Source="question" Aspect="AspectFit" HeightRequest="100" TranslationY="-160" TranslationX="60" Rotation="10" Scale="1.3" />
+                    <Image Source="braindstorming" Aspect="AspectFit" HeightRequest="150" RotationY="180" TranslationY="-70" TranslationX="60" Rotation="-5" Scale="1.3" />
+                    <Image Source="brain" Aspect="AspectFit" HeightRequest="110" Rotation="-10" TranslationY="-80" TranslationX="-20" Scale="1.2" />
+                    <Image Source="question" Aspect="AspectFit" HeightRequest="100" TranslationY="-160" TranslationX="60" Rotation="10" Scale="1.3" Opacity="0.2" />
                     <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="100" TranslationY="-190" Scale="0.7" />
                 </StackLayout>
                 <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20" >
@@ -87,14 +90,16 @@
                         </Button.Background>
                     </Button>
                     <Button 
-                        Text="CREDITOS" 
-                        FontSize="22" 
+                        Text="INICIAR SESIÓN" 
+                        FontSize="21" 
                         FontAttributes="Bold" 
                         TextColor="#fff" 
                         CornerRadius="24"
                         BorderColor="#745826"
                         BorderWidth="4"
-                        HeightRequest="54">
+                        HeightRequest="54"
+                        x:Name="Register"
+                        Clicked="Register_Clicked">
                         <Button.Background>
                             <LinearGradientBrush>
                                 <GradientStop Color="#edc50e" Offset="0.1" />
