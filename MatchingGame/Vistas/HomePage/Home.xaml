@@ -90,14 +90,16 @@
                         </Button.Background>
                     </Button>
                     <Button 
-                        Text="CREDITOS" 
-                        FontSize="22" 
+                        Text="INICIAR SESIÓN" 
+                        FontSize="21" 
                         FontAttributes="Bold" 
                         TextColor="#fff" 
                         CornerRadius="24"
                         BorderColor="#745826"
                         BorderWidth="4"
-                        HeightRequest="54">
+                        HeightRequest="54"
+                        x:Name="Register"
+                        Clicked="Register_Clicked">
                         <Button.Background>
                             <LinearGradientBrush>
                                 <GradientStop Color="#edc50e" Offset="0.1" />
