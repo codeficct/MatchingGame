@@ -4,10 +4,75 @@
              x:Class="MatchingGame.Vistas.LoginPage.LoginPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView BackgroundColor="#140429">
+            <StackLayout VerticalOptions="CenterAndExpand" MinimumHeightRequest="900">
+                <Image
+                    Source="matchingGame"
+                    HeightRequest="250"
+                    Scale="1.6"
+                    TranslationY="40"
+                    Aspect="AspectFill"
+                    x:Name="SelectAvatars"
+                    HorizontalOptions="Center"/>
+                <StackLayout
+                    Orientation="Vertical"
+                    VerticalOptions="Fill"
+                    Spacing="16"
+                    Margin="42,62">
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                Keyboard="Email"
+                                Placeholder="example@example.com"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame
+                        CornerRadius="34"
+                        HeightRequest="54"
+                        BackgroundColor="#411645"
+                        Padding="20,0"
+                        Margin="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry
+                                IsPassword="True"
+                                Placeholder="Contraseña"
+                                HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Button
+                    Text="Iniciar Sesión"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    CornerRadius="24"
+                    Margin="70,0"
+                    HeightRequest="54"
+                    BackgroundColor="#fe207d"
+                    BorderColor="#411645"
+                    BorderWidth="4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                    <Label Text="¿No tienes una cuenta?" FontSize="16" VerticalOptions="Center" TranslationX="5" />
+                    <Button
+                        Text="Registrate"
+                        BackgroundColor="Transparent"
+                        x:Name="Register"
+                        TranslationX="-7"
+                        FontSize="16"
+                        HeightRequest="42"
+                        TextTransform="None"
+                        WidthRequest="100"
+                        Padding="0"
+                        Margin="0"
+                        VerticalOptions="CenterAndExpand"
+                        Clicked="Register_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

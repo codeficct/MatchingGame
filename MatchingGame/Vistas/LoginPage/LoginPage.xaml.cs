@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatchingGame.Vistas.HomePage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,22 @@ namespace MatchingGame.Vistas.LoginPage
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private async void Register_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            PromptForExit();
+            return true;
+        }
+
+        private async void PromptForExit()
+        {
+            await Navigation.PushAsync(new Home());
         }
     }
 }
