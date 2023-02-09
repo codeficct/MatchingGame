@@ -12,23 +12,26 @@
         <!-- Header start-->
         <Frame BackgroundColor="Transparent" Padding="0,10">
             <Grid RowDefinitions="*" ColumnDefinitions="*,*">
-                <StackLayout Grid.Column="0" HorizontalOptions="Start">
-                    <Frame Padding="42,4,14,4" TranslationX="-30" BackgroundColor="#f1a41f" CornerRadius="14">
-                        <Label Text="{Binding GetScore}" TextColor="#FFF" FontSize="14" x:Name="lblScore" />
+                <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start">
+                    <Frame Padding="42,4,14,4" TranslationX="-30" WidthRequest="50" BackgroundColor="#411645" HeightRequest="60" CornerRadius="14">
+                        <Label Text="0" TextColor="#edc50e" FontAttributes="Bold" FontSize="16" x:Name="lblScore" VerticalOptions="Center" />
                     </Frame>
+                    <Image Source="star" HeightRequest="50" HorizontalOptions="Start" TranslationX="-50" TranslationY="-2" Rotation="-10"/>
                 </StackLayout>
                 <StackLayout Grid.Column="1" HorizontalOptions="End">
                     <Frame
                         CornerRadius="14"
                         TranslationX="10"
-                        BackgroundColor="#6a1c3c"
+                        BackgroundColor="#411645"
                         Padding="14,4,22,4"
+                        HeightRequest="60"
                     >
                         <Label
-                            Text="Feria 2-2022"
+                            VerticalOptions="CenterAndExpand"
+                            Text="Ficct-uagrm"
                             TextColor="#FFF"
                             BackgroundColor="Transparent"
-                            FontSize="14"
+                            FontSize="16"
                         />
                     </Frame>
                 </StackLayout>
