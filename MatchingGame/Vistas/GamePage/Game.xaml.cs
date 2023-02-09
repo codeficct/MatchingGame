@@ -31,7 +31,9 @@ namespace MatchingGame.Vistas.GamePage
 
             m1 = new Matrix();
 
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
+
             CardContainer.Content = grid;
             playGame.IsEnabled = true;
             playGame.Opacity = 1;
@@ -58,6 +60,7 @@ namespace MatchingGame.Vistas.GamePage
                     count++;
                     grid.Children.Clear();
                     StarGame();
+                    m1.DisableButtons(ref grid);
                     if (count == 10)
                     {
                         isContinue = false;
@@ -68,6 +71,7 @@ namespace MatchingGame.Vistas.GamePage
 
             await Task.Delay(7000 + 7000 * (currentLevel / 5));
             m1.HideCards(ref grid);
+            m1.EnableButtons(ref grid);
             m1.SetMatchImage(ref MatchImageRandom);
         }
 
@@ -98,6 +102,12 @@ namespace MatchingGame.Vistas.GamePage
         {
             m1.Dispersion();
             m1.GenerateCards(ref grid);
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            //return base.OnBackButtonPressed();
+            return true;
         }
     }
 }

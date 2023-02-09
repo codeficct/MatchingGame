@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MatchingGame.Vistas.LoginPage.AvatarsPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MatchingGame.Vistas.LoginPage" xmlns:vistas="clr-namespace:MatchingGame.Vistas.GamePage"
+             x:Class="MatchingGame.Vistas.LoginPage.AvatarsPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="*,60" BackgroundColor="#140429">
+            <ScrollView Grid.Row="0">
+                <StackLayout HorizontalOptions="CenterAndExpand" Padding="30,0,30,30">
+                    <Label Text="Selecciona tu avatar" FontSize="Large" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,10" />
+                    <vistas:Cards x:Name="AvatarsContainer" />
+                </StackLayout>
+            </ScrollView>
+            <StackLayout Grid.Row="1">
+                <Button
+                    Text="Continuar"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    CornerRadius="24"
+                    Margin="70,0"
+                    HeightRequest="54"
+                    BackgroundColor="#fe207d"
+                    BorderColor="#411645"
+                    BorderWidth="4"
+                    x:Name="SelectAvatar"
+                    Clicked="SelectAvatar_Clicked"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

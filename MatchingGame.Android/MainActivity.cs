@@ -4,14 +4,21 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using MatchingGame.Vistas.HomePage;
 
 namespace MatchingGame.Droid
 {
-    [Activity(Label = "MatchingGame", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "MatchingGame", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
+            Home.BackPressed = OnBackPressed;
+
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

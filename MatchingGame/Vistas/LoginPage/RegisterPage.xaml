@@ -4,15 +4,15 @@
              x:Class="MatchingGame.Vistas.LoginPage.RegisterPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#140429">
+        <ScrollView BackgroundColor="#140429">
             <StackLayout VerticalOptions="CenterAndExpand" MinimumHeightRequest="900">
                 <ImageButton
                     Source="addProfile"
                     WidthRequest="150"
                     HeightRequest="150"
                     Aspect="AspectFit"
-                    x:Name="SelectAvatars"
-                    Clicked="SelectAvatars_Clicked"
+                    x:Name="SelectAvatar"
+                    Clicked="SelectAvatar_Clicked"
                     HorizontalOptions="Center"
                     CornerRadius="900"
                     BackgroundColor="#140429"/>
@@ -87,8 +87,15 @@
                     BackgroundColor="#fe207d"
                     BorderColor="#411645"
                     BorderWidth="4"/>
-                <Label Text="Iniciar Sesión" HorizontalOptions="Center" />
+                <Button
+                    Text="Iniciar Sesión"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    x:Name="LogIn"
+                    FontSize="16"
+                    TextTransform="Lowercase"
+                    Clicked="LogIn_Clicked"/>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
