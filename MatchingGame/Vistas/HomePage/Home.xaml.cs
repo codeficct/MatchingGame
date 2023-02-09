@@ -15,6 +15,9 @@ namespace MatchingGame.Vistas.HomePage
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {
+        public static Action BackPressed;
+
+        private bool AcceptBack;
         public GameSetting Setting { get; set; }
         int Score;
         public Home()
@@ -26,7 +29,13 @@ namespace MatchingGame.Vistas.HomePage
                 Score = 0
             };
             BindingContext = Setting;
+            // From database
+            // Application.Current.Properties["Score"] = 1;
             InitializeComponent();
+            if (Application.Current.Properties.ContainsKey("Score"))
+            {
+                lblScore.Text = Application.Current.Properties["Score"].ToString();
+            }
         }
 
         private async void navigateToGame_Clicked(object sender, EventArgs e)
@@ -37,6 +46,24 @@ namespace MatchingGame.Vistas.HomePage
         private async void Register_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegisterPage());
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (AcceptBack)
+                return false;
+
+            PromptForExit();
+            return true;
+        }
+
+        private async void PromptForExit()
+        {
+            if (await DisplayAlert("", "¿Estás seguro que quieres salir? 🥺", "Si", "No"))
+            {
+                AcceptBack = true;
+                BackPressed();
+            }
         }
     }
 }
