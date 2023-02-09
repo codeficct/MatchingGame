@@ -128,6 +128,26 @@ namespace MatchingGame.Clases
             }
         }
 
+        public void DisableButtons(ref Grid grid)
+        {
+            {
+                foreach (ImageButton item in grid.Children)
+                {
+                    item.IsEnabled = false;
+                }
+            }
+        }
+
+        public void EnableButtons(ref Grid grid)
+        {
+            {
+                foreach (ImageButton item in grid.Children)
+                {
+                    item.IsEnabled = true;
+                }
+            }
+        }
+
         public void HideCards(ref Grid grid)
         {
             foreach (ImageButton item in grid.Children)
