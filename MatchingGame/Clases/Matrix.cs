@@ -63,7 +63,7 @@ namespace MatchingGame.Clases
             for (int r = 0; r < rows; r++)
                 for (int c = 0; c < columns; c++)
                 {
-                    ImageButton imageButton = new ImageButton { Source = "question", Padding = new Thickness(0, 30), Aspect = Aspect.AspectFit, BackgroundColor = Color.FromHex("#7b5b9c"), BorderWidth = 2, BorderColor = Color.FromHex("#aaa"), CornerRadius = 16 };
+                    ImageButton imageButton = new ImageButton { Source = "question", Aspect = Aspect.AspectFit, BackgroundColor = Color.FromHex("#7b5b9c"), BorderWidth = 2, BorderColor = Color.FromHex("#aaa"), CornerRadius = 16 };
 
                     grid.Children.Add(imageButton, c, r);
                 }
@@ -75,7 +75,9 @@ namespace MatchingGame.Clases
                 for (int c = 0; c < columns; c++)
                 {
                     ImageButton imageButton = new ImageButton { Source = m[r, c], Aspect = Aspect.AspectFit, BackgroundColor = Color.FromHex("#7b5b9c"), BorderWidth = 2, BorderColor = Color.FromHex("#aaa"), CornerRadius = 16, ClassId = m[r, c] };
+
                     gridContent.Children.Add(imageButton, c, r);
+                    
                     imageButton.Clicked += async (sender, args) =>
                     {
                         imageButton.Source = ((ImageButton)sender).ClassId;
