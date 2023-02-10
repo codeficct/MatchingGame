@@ -7,5 +7,6 @@ namespace MatchingGame.Clases
     internal class Score
     {
         public int score { get; set; }
+        public int maxLevel { get; set; }
     }
 }
