@@ -8,14 +8,14 @@ namespace MatchingGame.Clases
     {
         public string _id { get; set; }
         public int score { get; set; }
+        public int maxLevel { get; set; }
         public string photo { get; set; }
         public string name { get; set; }
         public string email { get; set; }
-        public string password { get; set; }
-        public string createdAt { get; set; }
-        public string updatedAt { get; set; }
-        public int __v { get; set; }
-        public string token { get; set; }
-        public int maxlevel { get; set; }
+        public string? password { get; set; }
+        public string? createdAt { get; set; }
+        public string? updatedAt { get; set; }
+        public int? __v { get; set; }
+        public string ?token { get; set; }
     }
 }
