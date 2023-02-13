@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MatchingGame.Clases"
+             x:Class="MatchingGame.Vistas.VictoryPage"
+              NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <local:GameSetting />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#140429" VerticalOptions="FillAndExpand">
+            <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*" VerticalOptions="EndAndExpand">
+                <Label
+                    Grid.Row="0"
+                    Text="Bien Hecho! ✨"
+                    FontSize="34"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+                <Image
+                    Source="checked"
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    Grid.Row="1"
+                />
+                <StackLayout
+                    Grid.Row="2"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,60,0,30">
+                        <Label Text="+"
+                            FontSize="34"
+                            TextColor="#03C988"
+                        />
+                        <Label Text="000"
+                            FontSize="34"
+                            TextColor="#03C988"
+                            x:Name="PointsEarned"
+                        />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Mis Puntos:"
+                            FontSize="24"
+                            TextColor="Gold"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="CenterAndExpand"
+                        />
+                        <Label Text="0000"
+                            FontSize="24"
+                            TextColor="Gold"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="CurrentScore"
+                        />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="3"
+                    Padding="0,0,0,16"
+                    Orientation="Horizontal"
+                    VerticalOptions="End"
+                    HorizontalOptions="CenterAndExpand">
+                    <Button
+                        Text="Salir"
+                        CornerRadius="24"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        BackgroundColor="#a95aad"
+                        BorderColor="#4d1e50"
+                        BorderWidth="4"
+                        Padding="30,0"
+                        x:Name="CloseBtn"
+                        HeightRequest="54"
+                        Clicked="CloseBtn_Clicked"
+                    />
+                    <Button
+                        Text="Siguiente Nivel"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#fff"
+                        CornerRadius="24"
+                        BorderColor="#104367"
+                        Padding="30,0"
+                        BorderWidth="4"
+                        x:Name="NextLevel"
+                        Clicked="NextLevel_Clicked"
+                        HeightRequest="54"
+                    >
+                        <Button.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#41f0d1" Offset="0.1" />
+                                <GradientStop Color="#0e72bd" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
