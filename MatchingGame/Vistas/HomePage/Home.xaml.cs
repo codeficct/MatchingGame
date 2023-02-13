@@ -2,12 +2,14 @@
 using MatchingGame.Vistas.GamePage;
 using MatchingGame.Vistas.LoginPage;
 using MatchingGame.Vistas.ModalPage;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
@@ -18,35 +20,63 @@ namespace MatchingGame.Vistas.HomePage
     public partial class Home : ContentPage
     {
         public static Action BackPressed;
+        string AppVersion = "0.1.1";
 
-        private bool AcceptBack;
         public GameSetting Setting { get; set; }
         int Score;
         public Home()
         {
-            // Taks: connect database for data persistence
             Score = 0;
             Setting = new GameSetting
             {
                 Score = 0
             };
             BindingContext = Setting;
-            // From database
-            // Application.Current.Properties["Score"] = 1;
             InitializeComponent();
             if (Application.Current.Properties.ContainsKey("Token")
                 && Application.Current.Properties.ContainsKey("Name"))
             {
                 UserName.Text = Application.Current.Properties["Name"].ToString();
                 Register.Text = "Ver Perfil";
-            } else
+            }
+            else
             {
                 UserName.Text = "Ficct-uagrm";
                 Register.Text = "Iniciar Sesión";
             }
             if (Application.Current.Properties.ContainsKey("Score"))
-            {
                 lblScore.Text = Application.Current.Properties["Score"].ToString();
+
+            GetVersionApp();
+        }
+
+        public async void GetVersionApp()
+        {
+            try
+            {
+                // Uri RequestUri = new Uri("https://api.github.com/repos/codeficct/MatchingGame/releases/latest");
+                Uri RequestUri = new("https://matchinggame.vercel.app/api/matching-game/version");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(RequestUri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Clases.Version[] version = JsonConvert.DeserializeObject<Clases.Version[]>(content);
+                    if (version[0].AppVersion != AppVersion)
+                    {
+                        string lastAndCurrent = $"De v{AppVersion} a ✨v{version[0].AppVersion} \n\n";
+                        string developer = $"Desarrollador: {version[0].Developer} \n\n";
+                        string Copyright = $"Copyright © {DateTime.Now.Year} Matching Game";
+                        if (await DisplayAlert(version[0].Title,
+                            $"{version[0].Description} \n\n" + lastAndCurrent + developer + Copyright
+                            , "Actualizar", "Cancelar"))
+                            await Launcher.OpenAsync("https://matchinggame.vercel.app");
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                await DisplayAlert("Error", error.Message, "Cancelar");
             }
         }
 
@@ -59,32 +89,35 @@ namespace MatchingGame.Vistas.HomePage
         {
             if (Application.Current.Properties.ContainsKey("Token")
                 && Application.Current.Properties.ContainsKey("Name"))
-            {
                 await Navigation.PushAsync(new ProfilePage());
-            }
             else
-            {
                 await Navigation.PushAsync(new RegisterPage());
-            }
         }
 
         protected override bool OnBackButtonPressed()
         {
-            if (AcceptBack)
-                return false;
+            base.OnBackButtonPressed();
+            var existingPages = Navigation.NavigationStack.ToList();
 
-            PromptForExit();
-            return true;
+            foreach (var page in existingPages)
+            {
+                if (existingPages[0] != page)
+                {
+                    Navigation.RemovePage(page);
+                }
+            }
+            //Device.BeginInvokeOnMainThread(async () =>
+            //{
+            //    var result = await DisplayAlert("Salir", "¿Desea salir de la aplicación?", "Si", "No");
+            //    if (result) await Navigation.PopAsync();
+            //});
+            return false;
         }
 
-        private async void PromptForExit()
+        private void PromptForExit()
         {
-            if (await DisplayAlert("", "¿Estás seguro que quieres salir? 🥺", "Si", "No"))
-            {
-                AcceptBack = true;
-                System.Environment.Exit(0);
-                BackPressed();
-            }
+            Application.Current.Quit();
+            // System.Environment.Exit(0);
         }
 
         private async void NavigateToInfoPage_Clicked(object sender, EventArgs e)

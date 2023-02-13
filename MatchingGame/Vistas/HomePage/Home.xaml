@@ -1,32 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="MatchingGame.Vistas.HomePage.Home"
-             xmlns:vistas="clr-namespace:MatchingGame.Vistas.HomePage" xmlns:local="clr-namespace:MatchingGame.Clases"
+             xmlns:local="clr-namespace:MatchingGame.Clases"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
         <local:GameSetting />
     </ContentPage.BindingContext>
-    <StackLayout Background="#140429" Orientation="Vertical">
-        <!-- Header start-->
-        <Frame BackgroundColor="Transparent" Padding="0,10">
-            <Grid RowDefinitions="30" ColumnDefinitions="*,*">
-                <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start">
-                    <Frame Padding="42,4,14,4" TranslationX="-30" WidthRequest="50" BackgroundColor="#411645" HeightRequest="30" CornerRadius="14">
-                        <Label Text="0" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" x:Name="lblScore" VerticalOptions="Center" />
-                    </Frame>
-                    <Image Source="star" HeightRequest="30" HorizontalOptions="Start" TranslationX="-50" TranslationY="-2" Rotation="-10"/>
-                </StackLayout>
-                <StackLayout Grid.Column="1" HorizontalOptions="End">
-                    <Frame
+        <StackLayout Background="#140429" Orientation="Vertical">
+            <!-- Header start-->
+            <Frame BackgroundColor="Transparent" Padding="0,10">
+                <Grid RowDefinitions="30" ColumnDefinitions="*,*">
+                    <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start">
+                        <Frame Padding="42,4,14,4" TranslationX="-30" WidthRequest="50" BackgroundColor="#411645" HeightRequest="30" CornerRadius="14">
+                            <Label Text="0" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" x:Name="lblScore" VerticalOptions="Center" />
+                        </Frame>
+                        <Image Source="star" HeightRequest="30" HorizontalOptions="Start" TranslationX="-50" TranslationY="-2" Rotation="-10"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="End">
+                        <Frame
                         CornerRadius="14"
                         TranslationX="10"
                         BackgroundColor="#411645"
                         Padding="14,4,22,4"
                         HeightRequest="30"
                     >
-                        <Label
+                            <Label
                             VerticalOptions="CenterAndExpand"
                             Text="Ficct-uagrm"
                             TextColor="#FFF"
@@ -34,31 +33,31 @@
                             FontSize="16"
                             x:Name="UserName"
                         />
-                    </Frame>
-                </StackLayout>
-            </Grid>
-        </Frame>
-        <!-- Header end-->
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <!-- Header end-->
 
-        <!-- Hero start-->
-        <Frame BackgroundColor="Transparent" Padding="0,70" HorizontalOptions="Center">
-            <StackLayout>
-                <Image Source="matchingGame" Aspect="AspectFill" Scale="1.2" />
-            </StackLayout>
-        </Frame>
-        <!-- Hero end-->
-
-        <!-- Button actions start-->
-        <Frame Padding="0" BackgroundColor="Transparent">
-            <Grid ColumnDefinitions="*,*">
+            <!-- Hero start-->
+            <Frame BackgroundColor="Transparent" Padding="0,70" HorizontalOptions="Center">
                 <StackLayout>
-                    <Image Source="braindstorming" Aspect="AspectFit" HeightRequest="150" RotationY="180" TranslationY="-70" TranslationX="60" Rotation="-5" Scale="1.3" />
-                    <Image Source="brain" Aspect="AspectFit" HeightRequest="110" Rotation="-10" TranslationY="-80" TranslationX="-20" Scale="1.2" />
-                    <Image Source="question" Aspect="AspectFit" HeightRequest="100" TranslationY="-160" TranslationX="60" Rotation="10" Scale="1.3" Opacity="0.2" />
-                    <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="100" TranslationY="-190" Scale="0.7" />
+                    <Image Source="matchingGame" Aspect="AspectFill" Scale="1.2" />
                 </StackLayout>
-                <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20" >
-                    <Button
+            </Frame>
+            <!-- Hero end-->
+
+            <!-- Button actions start-->
+            <Frame Padding="0" BackgroundColor="Transparent">
+                <Grid ColumnDefinitions="*,*">
+                    <StackLayout>
+                        <Image Source="braindstorming" Aspect="AspectFit" HeightRequest="150" RotationY="180" TranslationY="-70" TranslationX="60" Rotation="-5" Scale="1.3" />
+                        <Image Source="brain" Aspect="AspectFit" HeightRequest="110" Rotation="-10" TranslationY="-80" TranslationX="-20" Scale="1.2" />
+                        <Image Source="question" Aspect="AspectFit" HeightRequest="100" TranslationY="-160" TranslationX="60" Rotation="10" Scale="1.3" Opacity="0.2" />
+                        <Image Source="rocketgif" IsAnimationPlaying="True" Rotation="300" TranslationX="100" TranslationY="-190" Scale="0.7" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Padding="0,0,18,0" Spacing="20" >
+                        <Button
                         Text="JUGAR"
                         FontSize="22"
                         FontAttributes="Bold"
@@ -70,14 +69,14 @@
                         Clicked="navigateToGame_Clicked"
                         HeightRequest="54"
                     >
-                        <Button.Background>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#41f0d1" Offset="0.1" />
-                                <GradientStop Color="#0e72bd" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button
+                            <Button.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#41f0d1" Offset="0.1" />
+                                    <GradientStop Color="#0e72bd" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button
                         Text="INFO"
                         FontSize="22"
                         FontAttributes="Bold"
@@ -88,14 +87,14 @@
                         x:Name="NavigateToInfoPage"
                         Clicked="NavigateToInfoPage_Clicked"
                         HeightRequest="54">
-                        <Button.Background>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#a95aad" Offset="0.1" />
-                                <GradientStop Color="#762f7d" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button 
+                            <Button.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#a95aad" Offset="0.1" />
+                                    <GradientStop Color="#762f7d" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button 
                         Text="INICIAR SESIÓN" 
                         FontSize="21" 
                         FontAttributes="Bold" 
@@ -106,16 +105,16 @@
                         HeightRequest="54"
                         x:Name="Register"
                         Clicked="Register_Clicked">
-                        <Button.Background>
-                            <LinearGradientBrush>
-                                <GradientStop Color="#edc50e" Offset="0.1" />
-                                <GradientStop Color="#f1a31d" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>
-                </StackLayout>
-            </Grid>
-        </Frame>
-        <!-- Button actions end-->
-    </StackLayout>
+                            <Button.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#edc50e" Offset="0.1" />
+                                    <GradientStop Color="#f1a31d" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <!-- Button actions end-->
+        </StackLayout>
 </ContentPage>
