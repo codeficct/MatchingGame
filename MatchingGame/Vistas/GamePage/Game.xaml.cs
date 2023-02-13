@@ -46,7 +46,7 @@ namespace MatchingGame.Vistas.GamePage
 
         private async void btnClose_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PopToRootAsync();
         }
 
         private async void playGame_Clicked(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace MatchingGame.Vistas.GamePage
 
         protected override bool OnBackButtonPressed()
         {
-            //return base.OnBackButtonPressed();
+            // return base.OnBackButtonPressed();
             return true;
         }
     }
