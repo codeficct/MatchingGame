@@ -36,7 +36,7 @@ namespace MatchingGame.Vistas.LoginPage
 
         private async void PromptForExit()
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PopToRootAsync();
         }
 
         private async void Login_Clicked(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace MatchingGame.Vistas.LoginPage
                     Application.Current.Properties["Id"] = results._id;
                     Application.Current.Properties["Password"] = results.password;
                     Application.Current.Properties["Token"] = results.token;
-                    //Application.Current.Properties["MaxLevel"] = results.maxlevel;
+                    Application.Current.Properties["MaxLevel"] = results.maxLevel;
 
                     await Navigation.PushAsync(new Home());
                 }
