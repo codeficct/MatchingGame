@@ -93,7 +93,7 @@ namespace MatchingGame.Vistas.LoginPage
 
         private async void PromptForExit()
         {
-            await Navigation.PushAsync(new RegisterPage());
+            await Navigation.PushAsync(new RegisterPage(Name, Email, Password, ConfirmPassword, imageSelected));
         }
     }
 }
