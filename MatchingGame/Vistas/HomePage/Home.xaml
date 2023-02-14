@@ -11,12 +11,12 @@
     <StackLayout Background="#140429" Orientation="Vertical">
         <!-- Header start-->
         <Frame BackgroundColor="Transparent" Padding="0,10">
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*">
+            <Grid RowDefinitions="30" ColumnDefinitions="*,*">
                 <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Start">
-                    <Frame Padding="42,4,14,4" TranslationX="-30" WidthRequest="50" BackgroundColor="#411645" HeightRequest="60" CornerRadius="14">
-                        <Label Text="0" TextColor="#edc50e" FontAttributes="Bold" FontSize="16" x:Name="lblScore" VerticalOptions="Center" />
+                    <Frame Padding="42,4,14,4" TranslationX="-30" WidthRequest="50" BackgroundColor="#411645" HeightRequest="30" CornerRadius="14">
+                        <Label Text="0" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16" x:Name="lblScore" VerticalOptions="Center" />
                     </Frame>
-                    <Image Source="star" HeightRequest="50" HorizontalOptions="Start" TranslationX="-50" TranslationY="-2" Rotation="-10"/>
+                    <Image Source="star" HeightRequest="30" HorizontalOptions="Start" TranslationX="-50" TranslationY="-2" Rotation="-10"/>
                 </StackLayout>
                 <StackLayout Grid.Column="1" HorizontalOptions="End">
                     <Frame
@@ -24,7 +24,7 @@
                         TranslationX="10"
                         BackgroundColor="#411645"
                         Padding="14,4,22,4"
-                        HeightRequest="60"
+                        HeightRequest="30"
                     >
                         <Label
                             VerticalOptions="CenterAndExpand"
@@ -32,6 +32,7 @@
                             TextColor="#FFF"
                             BackgroundColor="Transparent"
                             FontSize="16"
+                            x:Name="UserName"
                         />
                     </Frame>
                 </StackLayout>
@@ -84,6 +85,8 @@
                         CornerRadius="24"
                         BorderColor="#411645"
                         BorderWidth="4"
+                        x:Name="NavigateToInfoPage"
+                        Clicked="NavigateToInfoPage_Clicked"
                         HeightRequest="54">
                         <Button.Background>
                             <LinearGradientBrush>
