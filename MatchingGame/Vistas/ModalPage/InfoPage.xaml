@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.ModalPage.InfoPage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="#f2f2f2">
+            <StackLayout VerticalOptions="Start" MinimumHeightRequest="900">
+                <Frame Background="#140429" Padding="0" Margin="0" CornerRadius="50" HeightRequest="500" VerticalOptions="Start" TranslationY="-50">
+                    <StackLayout VerticalOptions="Center" Orientation="Vertical" Padding="0,20,0,0">
+                    </StackLayout>
+                </Frame>
+                <Image Source="biblio" HeightRequest="50" HorizontalOptions="Center" TranslationY="-200" Scale="8" />
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,20">
+                    <Label FontSize="18" FontAttributes="Bold" TextColor="#fe207d" Text="1. "/>
+                    <Label FontSize="18" TextColor="#140429" Text="Inicia Sesión o Registrate para guardar y sincronizar tu puntuación." />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,20">
+                    <Label FontSize="18" FontAttributes="Bold" TextColor="#fe207d" Text="2. " />
+                    <Label FontSize="18" TextColor="#140429" Text="Memorizar y hacer match." />
+                </StackLayout>
+                <Image Source="match" HorizontalOptions="FillAndExpand" Aspect="AspectFit" Margin="20,0,20,20" />
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,20">
+                    <Label FontSize="18" FontAttributes="Bold" TextColor="#fe207d" Text="3. " />
+                    <Label FontSize="18" TextColor="#140429" Text="Consigue más puntos sin equivocarte haciendo match." />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,20" HorizontalOptions="CenterAndExpand">
+                    <Image Source="win" WidthRequest="160" />
+                    <Image Source="fail" WidthRequest="160" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20,0,20,20">
+                    <Label FontSize="18" FontAttributes="Bold" TextColor="#fe207d" Text="4. " />
+                    <Label FontSize="18" TextColor="#140429" Text="Posicionate entre los mejores en el ranking de jugadores." />
+                </StackLayout>
+                <Image Source="rank" HeightRequest="200" HorizontalOptions="Center" />
+                <Button Text="Volver"
+                    x:Name="CloseModal"
+                    Clicked="CloseModal_Clicked"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    CornerRadius="24"
+                    Margin="20,0,20,20"
+                    HeightRequest="54"
+                    BackgroundColor="#fe207d"
+                    BorderColor="#b37bb5"
+                    BorderWidth="4"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
