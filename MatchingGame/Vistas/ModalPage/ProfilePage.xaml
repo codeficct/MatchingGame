@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchingGame.Vistas.ModalPage.ProfilePage"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#140429">
+            <StackLayout VerticalOptions="CenterAndExpand" MinimumHeightRequest="900">
+                <Frame
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    WidthRequest="170"
+                    HeightRequest="170"
+                    CornerRadius="999" >
+                    <Image
+                        Source="addProfile"
+                        WidthRequest="170"
+                        HeightRequest="170"
+                        Aspect="AspectFit"
+                        x:Name="SelectAvatar" />
+                </Frame>
+                <StackLayout HorizontalOptions="Center" Padding="20,0">
+                    <Label
+                        Text="Luis Gabriel"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        x:Name="Name" />
+                    <Label
+                        Text="janco7249@gmail.com"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,40"
+                        x:Name="Email" />
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,40">
+                        <Frame BackgroundColor="#411645" CornerRadius="16" Padding="0,10" Margin="0" HorizontalOptions="Start" WidthRequest="100">
+                            <StackLayout Orientation="Vertical">
+                                <Label 
+                                    Text="444"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    x:Name="Score" />
+                                <Label
+                                    Text="Score"
+                                    FontSize="16"
+                                    HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="#411645" CornerRadius="16" Padding="0,10" Margin="0" HorizontalOptions="Start" WidthRequest="100">
+                            <StackLayout Orientation="Vertical">
+                                <Label 
+                                    Text="1"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    x:Name="Position" />
+                                <Label
+                                    Text="Top"
+                                    FontSize="16"
+                                    HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="#411645" CornerRadius="16" Padding="0,10" Margin="0" HorizontalOptions="Start" WidthRequest="100">
+                            <StackLayout Orientation="Vertical">
+                                <Label 
+                                    Text="10"
+                                    FontSize="24"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    x:Name="MaxLevel" />
+                                <Label
+                                    Text="Max. Nivel"
+                                    FontSize="16"
+                                    HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+                <Button
+                    Text="Cerrar Sesión"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    CornerRadius="24"
+                    Margin="70,0"
+                    HeightRequest="54"
+                    BackgroundColor="#F55050"
+                    BorderColor="#411645"
+                    BorderWidth="4"
+                    x:Name="Logout"
+                    Clicked="Logout_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
