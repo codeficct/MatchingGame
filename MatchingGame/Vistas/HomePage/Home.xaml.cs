@@ -36,6 +36,7 @@ namespace MatchingGame.Vistas.HomePage
             if (Application.Current.Properties.ContainsKey("Token")
                 && Application.Current.Properties.ContainsKey("Name"))
             {
+                GetUserLoggedIn(Application.Current.Properties["Id"].ToString());
                 UserName.Text = Application.Current.Properties["Name"].ToString();
                 Register.Text = "Ver Perfil";
             }
@@ -48,6 +49,31 @@ namespace MatchingGame.Vistas.HomePage
                 lblScore.Text = Application.Current.Properties["Score"].ToString();
 
             GetVersionApp();
+        }
+
+        public async void GetUserLoggedIn(string id)
+        {
+            try
+            {
+                Uri RequestUri = new($"https://matchinggame.vercel.app/api/matching-game/{id}");
+                var client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(RequestUri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    User user = JsonConvert.DeserializeObject<User>(content);
+                    Application.Current.Properties["Name"] = user.name;
+                    Application.Current.Properties["Photo"] = user.photo;
+                    Application.Current.Properties["Email"] = user.email;
+                    Application.Current.Properties["Score"] = user.score;
+                    lblScore.Text = user.score.ToString();
+                    Application.Current.Properties["MaxLevel"] = user.maxLevel;
+                }
+            }
+            catch (Exception)
+            {
+                (Application.Current).MainPage = new NavigationPage(new Home());
+            }
         }
 
         public async void GetVersionApp()
@@ -74,9 +100,9 @@ namespace MatchingGame.Vistas.HomePage
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                await DisplayAlert("Error", error.Message, "Cancelar");
+                (Application.Current).MainPage = new NavigationPage(new Home());
             }
         }
 
@@ -89,7 +115,7 @@ namespace MatchingGame.Vistas.HomePage
         {
             if (Application.Current.Properties.ContainsKey("Token")
                 && Application.Current.Properties.ContainsKey("Name"))
-                await Navigation.PushAsync(new ProfilePage());
+                await Navigation.PushModalAsync(new ProfilePage());
             else
                 await Navigation.PushAsync(new RegisterPage());
         }
@@ -98,26 +124,11 @@ namespace MatchingGame.Vistas.HomePage
         {
             base.OnBackButtonPressed();
             var existingPages = Navigation.NavigationStack.ToList();
-
             foreach (var page in existingPages)
-            {
-                if (existingPages[0] != page)
-                {
+                if (existingPages[existingPages.Count - 1] != page)
                     Navigation.RemovePage(page);
-                }
-            }
-            //Device.BeginInvokeOnMainThread(async () =>
-            //{
-            //    var result = await DisplayAlert("Salir", "¿Desea salir de la aplicación?", "Si", "No");
-            //    if (result) await Navigation.PopAsync();
-            //});
-            return false;
-        }
 
-        private void PromptForExit()
-        {
-            Application.Current.Quit();
-            // System.Environment.Exit(0);
+            return false;
         }
 
         private async void NavigateToInfoPage_Clicked(object sender, EventArgs e)
