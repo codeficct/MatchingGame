@@ -4,7 +4,7 @@
              x:Class="MatchingGame.Vistas.LoginPage.AvatarsPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <Grid RowDefinitions="*,60" BackgroundColor="#140429">
+        <Grid RowDefinitions="*,70" BackgroundColor="#140429">
             <ScrollView Grid.Row="0">
                 <StackLayout HorizontalOptions="CenterAndExpand" Padding="30,0,30,30">
                     <Label Text="Selecciona tu avatar" FontSize="Large" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,10" />
@@ -14,10 +14,12 @@
             <StackLayout Grid.Row="1">
                 <Button
                     Text="Continuar"
+                    TextColor="White"
                     FontSize="22"
+                    VerticalOptions="Center"
                     FontAttributes="Bold"
                     CornerRadius="24"
-                    Margin="70,0"
+                    Margin="70,5"
                     HeightRequest="54"
                     BackgroundColor="#fe207d"
                     BorderColor="#411645"

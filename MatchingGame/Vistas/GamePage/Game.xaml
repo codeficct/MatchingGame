@@ -23,6 +23,7 @@
                         <Label
                             Text="Nivel"
                             FontSize="16"
+                            TextColor="#ccc"
                             HorizontalOptions="Center" />
                     </StackLayout>
                 </Frame>
@@ -50,6 +51,7 @@
                     <Button
                         Text="Info"
                         CornerRadius="24"
+                        TextColor="White"
                         FontSize="18"
                         FontAttributes="Bold"
                         BackgroundColor="#a95aad"
@@ -61,6 +63,7 @@
                     <Button 
                        Grid.Column="1"
                         Text="Jugar"
+                        TextColor="White"
                         CornerRadius="24"
                         Margin="10,0"
                         FontSize="18"
@@ -80,6 +83,7 @@
                     <Button
                         Grid.Column="2"
                         Text="Salir"
+                        TextColor="White"
                         CornerRadius="24"
                         FontSize="18"
                         FontAttributes="Bold"
