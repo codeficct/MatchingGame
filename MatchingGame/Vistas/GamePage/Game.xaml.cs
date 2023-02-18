@@ -46,7 +46,7 @@ namespace MatchingGame.Vistas.GamePage
 
         private async void btnClose_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new Home());
         }
 
         private async void playGame_Clicked(object sender, EventArgs e)
