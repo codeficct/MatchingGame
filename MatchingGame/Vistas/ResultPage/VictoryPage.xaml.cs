@@ -27,35 +27,44 @@ namespace MatchingGame.Vistas
             InitializeComponent();
             PointsEarned.Text = Score.ToString();
             currentScore = Score;
-            // Application.Current.Properties["Score"] = Score;
-            if (Application.Current.Properties.ContainsKey("Score") || Application.Current.Properties.ContainsKey("MaxLevel"))
+            if (Application.Current.Properties.ContainsKey("Score") && Application.Current.Properties.ContainsKey("MaxLevel"))
             {
                 Application.Current.Properties["Score"] = (int)Application.Current.Properties["Score"] + currentScore;
                 if ((int)Application.Current.Properties["MaxLevel"] < level)
                     Application.Current.Properties["MaxLevel"] = level;
-                
+
                 CurrentScore.Text = Application.Current.Properties["Score"].ToString();
                 isFirstRender = false;
                 if (Application.Current.Properties.ContainsKey("Id") && Application.Current.Properties.ContainsKey("Token"))
+                {
                     UpdateScore(currentScore, (int)Application.Current.Properties["MaxLevel"], Application.Current.Properties["Id"].ToString());
+                }
             }
 
             if (isFirstRender)
             {
                 CurrentScore.Text = Score.ToString();
                 Application.Current.Properties["Score"] = Score;
+                Application.Current.Properties["MaxLevel"] = level;
             }
         }
 
         public async void UpdateScore(int Score, int level, string id)
         {
-            Score objScore = new() { score = Score, maxLevel = level };
-            Uri RequestUri = new($"https://matchinggame.vercel.app/api/matching-game/{id}");
-            var client = new HttpClient();
-            var jsonScore = JsonConvert.SerializeObject(objScore);
-            var contentJsonScore = new StringContent(jsonScore, Encoding.UTF8, "application/json");
+            try
+            {
+                Score objScore = new() { score = Score, maxLevel = level };
+                Uri RequestUri = new($"https://matchinggame.vercel.app/api/matching-game/{id}");
+                var client = new HttpClient();
+                var jsonScore = JsonConvert.SerializeObject(objScore);
+                var contentJsonScore = new StringContent(jsonScore, Encoding.UTF8, "application/json");
 
-            await client.PutAsync(RequestUri, contentJsonScore);
+                await client.PutAsync(RequestUri, contentJsonScore);
+            }
+            catch (Exception)
+            {
+                (Application.Current).MainPage = new NavigationPage(new Home());
+            }
         }
 
         private async void NextLevel_Clicked(object sender, EventArgs e)
@@ -65,7 +74,7 @@ namespace MatchingGame.Vistas
 
         private async void CloseBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new Home());
         }
 
         protected override bool OnBackButtonPressed()
