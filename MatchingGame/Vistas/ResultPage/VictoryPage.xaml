@@ -66,6 +66,7 @@
                         CornerRadius="24"
                         FontSize="22"
                         FontAttributes="Bold"
+                        TextColor="White"
                         BackgroundColor="#a95aad"
                         BorderColor="#4d1e50"
                         BorderWidth="4"

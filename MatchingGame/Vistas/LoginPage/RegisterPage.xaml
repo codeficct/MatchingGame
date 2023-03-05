@@ -28,10 +28,12 @@
                         Padding="20,0"
                         Margin="0">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="👤" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3"  WidthRequest="23" />
+                            <Label Text="👤" TextColor="White" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3"  WidthRequest="23" />
                             <Entry
                                 x:Name="BoxName"
                                 Keyboard="Text"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 Margin="0"
                                 Placeholder="Introduzca su nombre"
                                 IsTextPredictionEnabled="True"
@@ -45,10 +47,13 @@
                         Padding="20,0"
                         Margin="0">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="📧" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
+                            <Label Text="📧" TextColor="White"
+                                   VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
                             <Entry
                                 x:Name="BoxEmail"
                                 Keyboard="Email"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 Placeholder="example@example.com"
                                 HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
@@ -60,11 +65,13 @@
                         Padding="20,0"
                         Margin="0">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="🔒" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
+                            <Label Text="🔒" TextColor="White" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
                             <Entry
                                 x:Name="BoxPassword"
                                 IsPassword="True"
                                 Placeholder="Contraseña"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
                     </Frame>
@@ -76,10 +83,12 @@
                         Margin="0"
                         >
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="🔒" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
+                            <Label Text="🔒" TextColor="White" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
                             <Entry
                                 x:Name="BoxPasswordRepeat"
                                 IsPassword="True"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 TextChanged="BoxPasswordRepeat_TextChanged"
                                 Placeholder="Contraseña de nuevo"
                                 HorizontalOptions="FillAndExpand"/>
@@ -95,6 +104,7 @@
                     CornerRadius="24"
                     Margin="70,0"
                     HeightRequest="54"
+                    TextColor="White"
                     BackgroundColor="#fe207d"
                     BorderColor="#411645"
                     BorderWidth="4"
@@ -104,6 +114,7 @@
                     Text="Iniciar Sesión"
                     HorizontalOptions="Center"
                     BackgroundColor="Transparent"
+                    TextColor="White"
                     x:Name="LogIn"
                     FontSize="16"
                     TextTransform="Lowercase"

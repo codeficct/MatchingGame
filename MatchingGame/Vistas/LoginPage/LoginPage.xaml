@@ -26,9 +26,11 @@
                         Padding="20,0"
                         Margin="0">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="📧" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
+                            <Label Text="📧" TextColor="White" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
                             <Entry
                                 x:Name="BoxEmail"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 Keyboard="Email"
                                 Placeholder="example@example.com"
                                 HorizontalOptions="FillAndExpand"/>
@@ -41,9 +43,11 @@
                         Padding="20,0"
                         Margin="0">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="🔒" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
+                            <Label Text="🔒" TextColor="White" VerticalOptions="Center" FontSize="20" Padding="0,0,0,3" WidthRequest="23" />
                             <Entry
                                 x:Name="BoxPassword"
+                                TextColor="White"
+                                PlaceholderColor="#ccc"
                                 IsPassword="True"
                                 Placeholder="Contraseña"
                                 HorizontalOptions="FillAndExpand"/>
@@ -56,6 +60,7 @@
                     Text="Iniciar Sesión"
                     x:Name="Login"
                     Clicked="Login_Clicked"
+                    TextColor="White"
                     FontSize="22"
                     FontAttributes="Bold"
                     CornerRadius="24"
@@ -65,12 +70,13 @@
                     BorderColor="#411645"
                     BorderWidth="4"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
-                    <Label Text="¿No tienes una cuenta?" FontSize="16" VerticalOptions="Center" TranslationX="5" />
+                    <Label Text="¿No tienes una cuenta?" TextColor="#ccc" FontSize="16" VerticalOptions="Center" TranslationX="5" />
                     <Button
                         Text="Registrate"
                         BackgroundColor="Transparent"
                         x:Name="Register"
                         TranslationX="-7"
+                        TextColor="White"
                         FontSize="16"
                         HeightRequest="42"
                         TextTransform="None"

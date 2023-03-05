@@ -68,6 +68,7 @@
                         BorderColor="#4d1e50"
                         BorderWidth="4"
                         Padding="30,0"
+                        TextColor="White"
                         x:Name="CloseOverBtn"
                         HeightRequest="54"
                         Clicked="CloseOverBtn_Clicked"

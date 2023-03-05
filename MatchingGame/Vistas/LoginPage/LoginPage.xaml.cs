@@ -71,8 +71,7 @@ namespace MatchingGame.Vistas.LoginPage
                     Application.Current.Properties["Password"] = results.password;
                     Application.Current.Properties["Token"] = results.token;
                     Application.Current.Properties["MaxLevel"] = results.maxLevel;
-
-                    await Navigation.PushAsync(new Home());
+                    (Application.Current).MainPage = new NavigationPage(new Home());
                 }
                 else if (response.StatusCode == HttpStatusCode.BadRequest)
                 {

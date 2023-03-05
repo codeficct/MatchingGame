@@ -27,9 +27,7 @@ namespace MatchingGame.Vistas
             PointsEarned.Text = Math.Abs(Score).ToString();
             PointsEarned.TextColor = Score < 0 ? Color.FromHex("#D2001A") : Color.FromHex("#03C988");
 
-            //CurrentScore.Text = (Score).ToString();
-
-            if (Application.Current.Properties.ContainsKey("Score"))
+            if (Application.Current.Properties.ContainsKey("Score") && Application.Current.Properties.ContainsKey("MaxLevel"))
             {
                 Application.Current.Properties["Score"] = (int)Application.Current.Properties["Score"] + Score;
                 CurrentScore.Text = Application.Current.Properties["Score"].ToString();
@@ -41,28 +39,35 @@ namespace MatchingGame.Vistas
             if (isFirstRender)
             {
                 Application.Current.Properties["Score"] = Score;
+                Application.Current.Properties["MaxLevel"] = Score;
             }
         }
 
         public async void UpdateScore(int Score, int level, string id)
         {
-            Score objScore = new() { score = Score, maxLevel = level };
-            Uri RequestUri = new($"https://matchinggame.vercel.app/api/matching-game/{id}");
-            var client = new HttpClient();
-            var jsonScore = JsonConvert.SerializeObject(objScore);
-            var contentJsonScore = new StringContent(jsonScore, Encoding.UTF8, "application/json");
+            try
+            {
+                Score objScore = new() { score = Score, maxLevel = level };
+                Uri RequestUri = new($"https://matchinggame.vercel.app/api/matching-game/{id}");
+                var client = new HttpClient();
+                var jsonScore = JsonConvert.SerializeObject(objScore);
+                var contentJsonScore = new StringContent(jsonScore, Encoding.UTF8, "application/json");
 
-            await client.PutAsync(RequestUri, contentJsonScore);
+                await client.PutAsync(RequestUri, contentJsonScore);
+            }
+            catch (Exception)
+            {
+                (Application.Current).MainPage = new NavigationPage(new Home());
+            }
         }
 
         private async void CloseOverBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new Home());
         }
 
         protected override bool OnBackButtonPressed()
         {
-            //return base.OnBackButtonPressed();
             return true;
         }
     }

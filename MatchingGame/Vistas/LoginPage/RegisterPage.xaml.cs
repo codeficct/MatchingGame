@@ -112,9 +112,10 @@ namespace MatchingGame.Vistas.LoginPage
                         Application.Current.Properties["Token"] = results.token;
                         Application.Current.Properties["MaxLevel"] = results.maxLevel;
 
-                        await Navigation.PushAsync(new Home());
+                        (Application.Current).MainPage = new NavigationPage(new Home());
                     }
-                } else
+                }
+                else
                 {
                     throw new ArgumentException("Intentar otra vez.");
                 }

@@ -6,7 +6,7 @@
     <item name="colorPrimaryDark">#140429</item>
     <item name="colorAccent">#fe207d</item>
     <item name="android:windowBackground">@drawable/splashpresentation</item>
-    <item name="android:windowIsTranslucent">true</item>
+    <!--<item name="android:windowIsTranslucent">true</item>-->
     <item name="android:windowAnimationStyle">@style/MyTheme.Splash</item>
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowContentOverlay">@null</item>
